@@ -28,7 +28,7 @@
         {{-- <a href="/images/IMG_2686.JPG" target="_blank"> --}}
           <img src="/images/IMG_2686.JPG" style="width:100%; height:75%;">
           <div class="caption">
-            <p>We share a natural trial with Manor Farm Infant School. The children enjoy exploring natural as well as spooky walks for halloween and easter egg hunts in spring</p>
+            <p>We share a natural trail with Manor Farm Infant School. The children enjoy exploring natural as well as spooky walks for halloween and easter egg hunts in spring</p>
           </div>
         </a>
       </div>

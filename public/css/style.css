@@ -42,9 +42,16 @@
         font-family: 'Pompiere', cursive;
     }
     
-    p, label, form{
+    p, label, form, .btn{
         font-size: 20px;
         font-family: 'Pompiere', cursive;
+    }
+
+    .card-header{
+        font-size: 25px;
+        font-weight: bold;
+        font-family: 'Pompiere', cursive;
+
     }
 
     .testimonial{
@@ -69,10 +76,21 @@
     .caption, button{
         font-family: 'Fahkwang', sans-serif;
     }
+    .table-admin{
+        border: none;
+    }
 
-    table {
+    .table_1 {
         border-collapse: collapse;
         width: 100%;
+    }
+
+    .th, .td {
+        text-align: center;
+        border: none;
+        padding: 15px;
+        font-family: 'Pompiere', cursive;
+        font-size: 18px;
     }
 
     th, td {
@@ -89,6 +107,15 @@
 
     .panel-heading{
         font-size: 20px;
+    }
+
+    .textarea{
+        font-size: 20px;
+    }
+
+    .staff_photo{
+        border:5px solid purple;
+        border-style: double;
     }
 
     #photos {

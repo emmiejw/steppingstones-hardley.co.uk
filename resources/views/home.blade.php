@@ -4,60 +4,69 @@
 <div class="container">
     <div class="row justify-content-center">
                 <div class="panel panel-success">
-                        <div class="panel-heading">Stepping Stones News</div>
+                        <div class="panel-heading">Stepping Stones Admin Area</div>
                         <div class="panel-body">
                             <div class="panel-group">
-                                {!! Form::open(['method'=>'POST', 'action' => 'HomeController@store'])!!}
-                                <div class="form-group">
-                                    {!! Form::label('title', 'Title:') !!}
-                                    {!! Form::text('title', null, ['class'=>'form-control'])!!}
-                                </div>
-                                <div class="form-group">
-                                    {!! Form::label('post', 'Post:') !!}
-                                    {!! Form::textarea('post', null, ['class'=>'form-control'])!!}
-                                </div>
-                                <div class="form-group">
-                                        {!! Form::label('file', 'Attachment:') !!}
-                                        {!! Form::file('file', null, ['class'=>'form-control'])!!}
-                                    </div>
-                                <div class="form-group">
-                                    {!! Form::submit('Submit', ['class'=>'btn btn-primary']) !!}
-                                </div>
-                            {!! Form::close() !!}
+                                <p>Please press on the red Edit button to view the current content of the page. After updating the page come back to this page and click on the page name to view the changes.</p>
+                                    <div class="col-10">
+                                        <center>
+                                            <table class="table-borderless col-8">
+                                                    <thead>
+                                                        <tr>
+                                                            <th class="th">Page</th>
+                                                            <th class="th">Edit Page</th>
+                                                            <th class="th">Add a Staff Member</th>
 
-                            <div class="col-sm-8">
-                                    <center>
-                                      <h1>Previous posts</h1>
-                                    </center>
-                                  <br>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                          <td class="td"><a href="/about">About Our Preschool</a></td>
+                                                          <td class="td"><a href="{{url('/about/1/edit')}}" class="btn btn-danger"><i class="fa fa-edit"></i></a></td>
+                                                          
+                                                        </tr>   
+                                                        <tr>
+                                                          <td class="td"><a href="/staff">Our Staff</a></td>
+                                                          <td class="td"><a href="{{url('/staff/8/edit')}}" class="btn btn-danger"><i class="fa fa-edit"></i></a></td>
+                                                          <td class="td"><a href="{{url('/staff/create')}}" class="btn btn-warning"><i class="fa fa-edit"></i></a></td>
+                                                          
+                                                        </tr> 
+                                                        <tr>
+                                                          <td class="td"><a href="/routine">Our Routine</a></td>
+                                                          <td class="td"><a href="{{url('/routine/1/edit')}}" class="btn btn-danger"><i class="fa fa-edit"></i></a></td>
+                                                          
+                                                          {{-- <td><a href="/routine/create" class="btn btn-warning">Add</a></td> --}}
+                                                        </tr> 
+                                                        <tr>
+                                                          <td class="td"><a href="/testimonials">Testmonials</a></td>
+                                                          <td class="td"><a href="{{url('/testimonals/1/edit')}}" class="btn btn-danger"><i class="fa fa-edit"></i></a></td>                                                          
+                                                          {{-- <td><a href="/testimonials/create" class="btn btn-warning">Add</a></td> --}}
+                                                        </tr>
+                                                        <tr>
+                                                          <td class="td"><a href="/photos">Photo Gallery</a></td>
+                                                          <td class="td"><a href="{{url('/photos/1/edit')}}" class="btn btn-danger"><i class="fa fa-edit"></i></a></td>
+                                                          {{-- <td><a href="/photos/create" class="btn btn-warning">Add</a></td> --}}
+                                                        </tr>  
+                                                        <tr>
+                                                          <td class="td"><a href="/contact">Contact Us</a></td>
+                                                          <td class="td"><a href="{{url('/contact/1/edit')}}" class="btn btn-danger"><i class="fa fa-edit"></i></a></td>
+                                                          
+                                                          {{-- <td><a href="/contact/create" class="btn btn-warning">Add</a></td> --}}
+                                                        </tr> 
+                                                    </tbody>
+                                                </table>
+                                            
+                                                <br>
+                                                <a class="btn btn-primary btn-lg" href="{{ route('logout') }}"
+                                                    onclick="event.preventDefault();
+                                                    document.getElementById('logout-form').submit();">{{ __('Logout') }}
+                                                </a>
+                                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                    @csrf
+                                                </form>
+                                            </div>
+                                        </center>
                             
-                    
-                                        @foreach($posts as $post)
-                                      
-                                          <div class="col-5">
-                                              <center>
-                                                  <p > {{$post->title}} </p>
-                                                  <img src="{{$post->file}}" alt="">
-                                                  <p><b>{{$post->post}}</b>  - posted on {{$post->created_at->diffForHumans()}}</p>
-                                              </center>
-                                          </div>
-                                          <br>
-                                            <center>                          
-                                                <b>-</b><i class="fa fa-heart" style="color:crimson;"></i><b>-</b>
-                                            </center>
-                                          <br>
-                                         
-                    
-                                        @endforeach
-                                      
-                               
-                                <div>
-                    
-                                </div>
-                                <center>
-                                    {{ $posts->links() }}
-                                </center>
-                                </div>
                 </div>
             </div>
         </div>

@@ -17,7 +17,9 @@ class CreateStaffTable extends Migration
             $table->increments('id');
             $table->string('name')->nullable();
             $table->string('role')->nullable();
-            $table->string('qualifications')->nullable();
+            $table->string('qualifications_1')->nullable();
+            $table->string('qualifications_2')->nullable();
+            $table->string('qualifications_3')->nullable();
             $table->string('aboutMe')->nullable();
             $table->string('photo')->nullable();
             $table->longText('commitee')->nullable();

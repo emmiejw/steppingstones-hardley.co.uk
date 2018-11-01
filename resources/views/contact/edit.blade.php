@@ -6,9 +6,10 @@
       <div class="panel panel-info">
         <div class="panel-heading"><b>Edit</b> Contact Us</div>
         <div class="panel-body">
-
-            
+          
+        </div>
       </div>
+    </div>
   </div>
 
 

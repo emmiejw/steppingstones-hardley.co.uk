@@ -9,11 +9,11 @@ class Staff extends Model
     protected $fillable = [
         'name', 
         'role', 
-        'qualifications',
+        'qualifications_1',
+        'qualifications_2',
+        'qualifications_3',
         'aboutMe',
         'photo',
         'commitee',
-        'involvement',
-        'policies'
     ];
 }

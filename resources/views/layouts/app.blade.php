@@ -33,8 +33,13 @@
                 <li class="li_nav"><a href="/photos">Photo Gallery</a></li>
                 <li class="li_nav"><a href="/testimonials">Testimonials</a></li>
                 <li class="li_nav"><a href="/contact">Contact Us</a></li>
-            </div>
+            </ul>    
+                                
+                            
+                        
+                    
         </div>
+        
      </nav>
     
      <div class="container">

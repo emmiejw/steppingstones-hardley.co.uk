@@ -25,7 +25,7 @@ class StaffController extends Controller
      */
     public function create()
     {
-        //
+        return view('staff.create');
     }
 
     /**
@@ -36,7 +36,30 @@ class StaffController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required',
+            'role' => 'required',
+            'qualifications_1' => 'required',
+            'aboutMe' => 'required',
+            'photo' => 'required|image'
+        ]);
+        $photo = $request->photo;
+        $photo_new_name = time().$photo->getClientOriginalName();
+        $photo->move('public/photos', $photo_new_name);
+
+        $staff = Staff::create([
+            'name' => $request->name,
+            'role' => $request->role,
+            'qualifications_1' => $request->qualifications_1,
+            'qualifications_2' => $request->qualifications_2,
+            'qualifications_3' => $request->qualifications_3,
+            'aboutMe' => $request->aboutMe,
+            'photo' => 'public/photos/' . $photo_new_name,
+        ]);
+
+    
+        return redirect()->back();
+
     }
 
     /**
@@ -58,7 +81,8 @@ class StaffController extends Controller
      */
     public function edit($id)
     {
-        //
+        $staffs = Staff::find($id);
+        return view('staff.edit',compact('staffs', $staffs));
     }
 
     /**
@@ -70,7 +94,34 @@ class StaffController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required',
+            'role' => 'required',
+            'qualifications_1' => 'required',
+            'aboutMe' => 'required',
+            // 'photo' => 'required|image'
+        ]);
+
+        $staff = Staff::find($id);
+
+        
+            
+            $staff->name = $request->get('name');
+            $staff->role = $request->get('role');
+            $staff->qualifications_1 = $request->get('qualifications_1');
+            $staff->qualifications_2 = $request->get('qualifications_2');
+            $staff->qualifications_3 = $request->get('qualifications_3');
+            $staff->aboutMe = $request->get('aboutMe');
+            // if($request->hasFile('photo'))
+            // {
+            //   $photo = $request->photo;
+            //   $photo_new_name = time().$photo->getClientOriginalName();
+            //   $photo->move('public/photos', $photo_new_name);
+            //   $staff->photo = 'public/photos'.$photo_new_name;
+            // }
+            $staff->save();
+
+        return redirect()->back();
     }
 
     /**
@@ -81,6 +132,9 @@ class StaffController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $staff = Staff::findOrFail($id);
+        $staff->delete();
+
+        return redirect('/staff');
     }
 }

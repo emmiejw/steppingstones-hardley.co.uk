@@ -8,7 +8,7 @@
         <div class="panel-body">
             <h3>Children's Daily Route</h3>
             <div style="overflow-x:auto;">
-            <table>
+            <table class="table_1">
                 <tr>
                     <th>Time</th>
                     <th>Activity</th>

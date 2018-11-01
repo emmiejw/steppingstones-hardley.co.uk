@@ -25,7 +25,7 @@ class AboutController extends Controller
      */
     public function create()
     {
-        //
+        return view('about.create');
     }
 
     /**
@@ -36,7 +36,18 @@ class AboutController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $about = new About;
+        $about->intro = $request->intro;
+        $about->aims = $request->aims;
+        $about->fees = $request->fees;
+        $about->rates = $request->rates;
+        $about->funding = $request->funding;
+        $about->registration = $request->registration;
+        $about->involvement = $request->involvement;
+        $about->policies = $request->policies;
+        $about->save();
+
+        return redirect()->back();
     }
 
     /**
@@ -58,7 +69,8 @@ class AboutController extends Controller
      */
     public function edit($id)
     {
-        //
+        $abouts = \App\About::find($id);
+        return view('about.edit',compact('abouts', $abouts));
     }
 
     /**
@@ -68,9 +80,20 @@ class AboutController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update($id ,Request $request)
     {
-        //
+        $about = About::find($id);
+        $about->intro = $request->get('intro');
+        $about->aims = $request->get('aims');
+        $about->fees = $request->get('fees');
+        $about->rates = $request->get('rates');
+        $about->funding = $request->get('funding');
+        $about->registration = $request->get('registration');
+        $about->involvement = $request->get('involvement');
+        $about->policies = $request->get('policies');
+        $about->save();
+        
+        return redirect()->back();
     }
 
     /**
