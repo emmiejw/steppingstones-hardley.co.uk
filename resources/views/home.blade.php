@@ -27,24 +27,19 @@
                                                         </tr>   
                                                         <tr>
                                                           <td class="td"><a href="/staff">Our Staff</a></td>
-                                                          <td class="td"><a href="{{url('/staff/8/edit')}}" class="btn btn-danger"><i class="fa fa-edit"></i></a></td>
+                                                          <td class="td"><a href="{{url('/staff/1/edit')}}" class="btn btn-danger"><i class="fa fa-edit"></i></a></td>
                                                           <td class="td"><a href="{{url('/staff/create')}}" class="btn btn-warning"><i class="fa fa-edit"></i></a></td>
                                                           
                                                         </tr> 
-                                                        <tr>
-                                                          <td class="td"><a href="/routine">Our Routine</a></td>
-                                                          <td class="td"><a href="{{url('/routine/1/edit')}}" class="btn btn-danger"><i class="fa fa-edit"></i></a></td>
-                                                          
-                                                          {{-- <td><a href="/routine/create" class="btn btn-warning">Add</a></td> --}}
-                                                        </tr> 
+                
                                                         <tr>
                                                           <td class="td"><a href="/testimonials">Testmonials</a></td>
-                                                          <td class="td"><a href="{{url('/testimonals/1/edit')}}" class="btn btn-danger"><i class="fa fa-edit"></i></a></td>                                                          
+                                                          <td class="td"><a href="{{url('testimonials/1/edit')}}" class="btn btn-danger"><i class="fa fa-edit"></i></a></td>                                                          
                                                           {{-- <td><a href="/testimonials/create" class="btn btn-warning">Add</a></td> --}}
                                                         </tr>
                                                         <tr>
                                                           <td class="td"><a href="/photos">Photo Gallery</a></td>
-                                                          <td class="td"><a href="{{url('/photos/1/edit')}}" class="btn btn-danger"><i class="fa fa-edit"></i></a></td>
+                                                          <td class="td"><a href="{{url('/photogallery/1/edit')}}" class="btn btn-danger"><i class="fa fa-edit"></i></a></td>
                                                           {{-- <td><a href="/photos/create" class="btn btn-warning">Add</a></td> --}}
                                                         </tr>  
                                                         <tr>

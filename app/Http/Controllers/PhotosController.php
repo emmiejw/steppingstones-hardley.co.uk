@@ -4,9 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\PhotoGallery;
+use Session;
 
 class PhotosController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth')->except('index');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -25,7 +31,7 @@ class PhotosController extends Controller
      */
     public function create()
     {
-        //
+        return view('photos.create');
     }
 
     /**
@@ -36,7 +42,24 @@ class PhotosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'photo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+        ]);
+        $photo = $request->photo;
+        $photo_new_name = time().$photo->getClientOriginalName();
+        $photo->move('public/public/images', $photo_new_name);
+
+        $photo = PhotoGallery::create([
+            'photo' => 'public/public/images/' . $photo_new_name,
+            'caption' => $request->caption,
+        ]);
+
+        
+
+        Session::flash('created', 'A Photo has been added successfully.');
+        
+        return redirect()->back();
+
     }
 
     /**
@@ -56,9 +79,10 @@ class PhotosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit()
     {
-        //
+        $photos = PhotoGallery::paginate(10);
+        return view('photos.edit', compact('photos', $photos));
     }
 
     /**
@@ -81,6 +105,10 @@ class PhotosController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $photo = PhotoGallery::findOrFail($id);
+        $photo->delete();
+        Session::flash('deleted', 'Photo has been deleted successfully.');
+        return redirect()->back();
     }
+
 }

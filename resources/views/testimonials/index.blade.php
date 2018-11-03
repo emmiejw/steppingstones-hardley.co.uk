@@ -6,6 +6,12 @@
           <div class="panel panel-danger">
             <div class="panel-heading">Testimonials </div>
             <div class="panel-body">
+                    @if(Session::has('created'))
+                    <div class="alert alert-success alert-dismissible">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        <strong>Success!</strong> Thank you for you Testimonial, the Staff have been notifed
+                    </div>
+                @endif
               <p><b>We love hearing from our parents how they and their children have founds their journey with us. Please feel free to add any comments</b> </p>
             <div class="col-sm-4">
               {!! Form::open(['method'=>'POST', 'action' => 'TestimonialController@store'])!!}
@@ -28,7 +34,7 @@
                   <h1>Showing some love:</h1>
                 </center>
               <br>
-                @if($testimonials)
+           
 
                     @foreach($testimonials as $testimonial)
                   
@@ -47,7 +53,7 @@
 
                     @endforeach
                   
-            @endif
+           
             <div>
 
             </div>

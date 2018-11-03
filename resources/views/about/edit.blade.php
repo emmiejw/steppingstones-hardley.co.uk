@@ -6,6 +6,22 @@
       <div class="panel panel-info">
         <div class="panel-heading"> <b>Edit</b> About Our Pre-SChool</div>
         <div class="panel-body">
+                @if(Session::has('created'))
+
+                <div class="alert alert-success alert-dismissible session">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    <strong>Success!</strong> <b>'About Page'</b> has been added successfully!
+                </div>
+            @endif
+        
+            @if(Session::has('updated'))
+                <div class="alert alert-warning alert-dismissible session">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    <strong>Success!</strong> <b>'About Page'</b> has been updated successfully!
+                </div>
+            @endif
+        
+
                 {!! Form::model($abouts,['method'=>'PATCH', 'action'=> ['AboutController@update', $abouts->id]]) !!}
             <div class="form-group font-weight-bold">
                 {!! Form::label('intro', 'Introduction:') !!}

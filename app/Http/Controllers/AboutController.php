@@ -4,9 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\About;
+use Session;
 
 class AboutController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth')->except('index');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -47,6 +52,7 @@ class AboutController extends Controller
         $about->policies = $request->policies;
         $about->save();
 
+        Session::flash('created', '"About Page" information has been added successfully.');
         return redirect()->back();
     }
 
@@ -93,6 +99,8 @@ class AboutController extends Controller
         $about->policies = $request->get('policies');
         $about->save();
         
+        Session::flash('updated', '"About Page" information has been updated successfully.');
+
         return redirect()->back();
     }
 

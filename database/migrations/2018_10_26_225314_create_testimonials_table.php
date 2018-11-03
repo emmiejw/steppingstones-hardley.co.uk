@@ -17,6 +17,7 @@ class CreateTestimonialsTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->text('message');
+            $table->integer('is_active')->default(0);
             $table->timestamps();
         });
     }

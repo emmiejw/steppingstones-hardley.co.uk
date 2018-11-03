@@ -26,13 +26,13 @@
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
-                <li class="li_nav"><a href="/about">About Our Pre-School</a></li>
-                <li class="li_nav"><a href="/staff">Our Staff</a></li>
-                <li class="li_nav"><a href="/routine">Our Routine</a></li>
-                <li class="li_nav"><a href="/tapestry">Tapestry</a></li>
-                <li class="li_nav"><a href="/photos">Photo Gallery</a></li>
-                <li class="li_nav"><a href="/testimonials">Testimonials</a></li>
-                <li class="li_nav"><a href="/contact">Contact Us</a></li>
+                <li class="linav"><a href="/about">About Our Pre-School</a></li>
+                <li class="linav"><a href="/staff">Our Staff</a></li>
+                <li class="linav"><a href="/routine">Our Routine</a></li>
+                <li class="linav"><a href="/tapestry">Tapestry</a></li>
+                <li class="linav"><a href="/photogallery">Photo Gallery</a></li>
+                <li class="linav"><a href="/testimonials">Testimonials</a></li>
+                <li class="linav"><a href="/contact">Contact Us</a></li>
             </ul>    
                                 
                             

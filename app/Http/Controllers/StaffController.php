@@ -4,9 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Staff;
+use Session;
 
 class StaffController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth')->except('index');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -57,7 +62,8 @@ class StaffController extends Controller
             'photo' => 'public/photos/' . $photo_new_name,
         ]);
 
-    
+        Session::flash('created', 'Staff Member has been added successfully.');
+        
         return redirect()->back();
 
     }
@@ -112,14 +118,9 @@ class StaffController extends Controller
             $staff->qualifications_2 = $request->get('qualifications_2');
             $staff->qualifications_3 = $request->get('qualifications_3');
             $staff->aboutMe = $request->get('aboutMe');
-            // if($request->hasFile('photo'))
-            // {
-            //   $photo = $request->photo;
-            //   $photo_new_name = time().$photo->getClientOriginalName();
-            //   $photo->move('public/photos', $photo_new_name);
-            //   $staff->photo = 'public/photos'.$photo_new_name;
-            // }
             $staff->save();
+
+            Session::flash('updated', 'Staff Member has been updated successfully.');
 
         return redirect()->back();
     }
@@ -134,7 +135,7 @@ class StaffController extends Controller
     {
         $staff = Staff::findOrFail($id);
         $staff->delete();
-
+        Session::flash('deleted', 'Staff Member has been deleted successfully.');
         return redirect('/staff');
     }
 }

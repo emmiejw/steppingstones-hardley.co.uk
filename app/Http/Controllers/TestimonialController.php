@@ -4,9 +4,19 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Testimonial;
+use App\User;
+use Session;
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class TestimonialController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth')->except('index');
+    }
+
+    
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +24,7 @@ class TestimonialController extends Controller
      */
     public function index()
     {
-        $testimonials = Testimonial::paginate(3);
+        $testimonials = Testimonial::where('is_active', 1)->paginate(5);
        return view('testimonials.index', compact('testimonials', $testimonials));
     }
 
@@ -38,7 +48,9 @@ class TestimonialController extends Controller
     public function store(Request $request)
     {
         Testimonial::create($request->all());
-
+        // $users = User::all();
+        // $users->notify(new NewTestimnoialPosted($testimonial));
+        Session::flash('created', 'Post created succesfully.');
         return redirect('/testimonials');
 
     }
@@ -62,7 +74,9 @@ class TestimonialController extends Controller
      */
     public function edit($id)
     {
-        //
+        $testimonials = Testimonial::all();
+        return view('testimonials.edit', compact('testimonials', $testimonials));
+       
     }
 
     /**
@@ -74,7 +88,8 @@ class TestimonialController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        Testimonial::findOrFail($id)->update($request->all());
+        return redirect('/testimonials');
     }
 
     /**
@@ -85,6 +100,9 @@ class TestimonialController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $testimonial = Testimonial::findOrFail($id);
+        $testimonial->delete();
+        Session::flash('deleted');
+        return redirect()->back();//
     }
 }

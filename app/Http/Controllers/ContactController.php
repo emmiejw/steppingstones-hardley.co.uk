@@ -7,6 +7,10 @@ use App\Contact;
 
 class ContactController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth')->except('index');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -25,7 +29,7 @@ class ContactController extends Controller
      */
     public function create()
     {
-        //
+        return view('contact.create');
     }
 
     /**
@@ -36,7 +40,16 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $contact = new Contact;
+        $contact->address_1 = $request->address_1;
+        $contact->address_2 = $request->address_2;
+        $contact->City = $request->City;
+        $contact->postcode = $request->postcode;
+        $contact->phone = $request->phone;
+        $contact->email = $request->email;
+        $contact->save();
+
+        return redirect()->back();
     }
 
     /**
@@ -58,7 +71,8 @@ class ContactController extends Controller
      */
     public function edit($id)
     {
-        //
+        $contacts = Contact::find($id);
+        return view('contact.edit',compact('contacts', $contacts));
     }
 
     /**

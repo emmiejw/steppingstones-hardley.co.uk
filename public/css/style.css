@@ -19,10 +19,11 @@
         background-size: 55vh, 100vw;
         margin-bottom: 30px;
         background-repeat: no-repeat;
-        color: black;
+        
         }
-        .navbar-brand{
+        .linav{
             color: black;
+            font-weight: bolder;
         }
     }
 
@@ -42,12 +43,12 @@
         font-family: 'Pompiere', cursive;
     }
     
-    p, label, form, .btn{
+    p, label, form, .btn {
         font-size: 20px;
         font-family: 'Pompiere', cursive;
     }
 
-    .card-header{
+    .card-header, .session {
         font-size: 25px;
         font-weight: bold;
         font-family: 'Pompiere', cursive;

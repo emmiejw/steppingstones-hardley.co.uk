@@ -15,7 +15,7 @@
                 <div class="panel-body">
                     <div class="col-sm-5">
                       <center>
-                        <img height="250" width="350" src="{{$staff->photo}}" alt="" class="staff_photo">
+                        <img height="200" width="250" src="{{$staff->photo}}" alt="" class="staff_photo">
                       </center>
                       </div>
                             <div class="col-sm-7">
