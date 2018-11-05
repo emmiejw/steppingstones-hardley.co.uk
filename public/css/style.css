@@ -27,6 +27,11 @@
         }
     }
 
+    .linav{
+        color: black;
+        font-weight: bolder;
+    }
+
     h2 {
         font-family: 'Nanum Brush Script', cursive;
     }

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Testimonial;
 use App\User;
 use Session;
+use Notification;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
@@ -47,9 +48,9 @@ class TestimonialController extends Controller
      */
     public function store(Request $request)
     {
+        $user = User::all();
         Testimonial::create($request->all());
-        // $users = User::all();
-        // $users->notify(new NewTestimnoialPosted($testimonial));
+        Notification::send($user, new \App\Notifications\NewTestimonialPosted);
         Session::flash('created', 'Post created succesfully.');
         return redirect('/testimonials');
 

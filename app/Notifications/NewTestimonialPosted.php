@@ -11,16 +11,16 @@ class NewTestimonialPosted extends Notification
 {
     use Queueable;
 
-    protected $test;
+    
 
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct($testimonial)
+    public function __construct()
     {
-        $this->$test = $testimonial;
+        
     }
 
     /**
@@ -44,8 +44,8 @@ class NewTestimonialPosted extends Notification
     {
         return (new MailMessage)
                     ->line('New Testimonial has been recieved')
-                    ->action('Notification Action', url('/'))
-                    ->line('Thank you for using our application!');
+                    ->action('Testimonial Action', url('/testimonials/1/edit'))
+                    ->line('Follow the link to Manage the Testimonials');
     }
 
     /**
