@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => 'Stepping Stones Pre-school Web App',
+    'name' => 'Stepping Stones Pre-school',
 
     /*
     |--------------------------------------------------------------------------

@@ -28,6 +28,9 @@
 
                 {!! Form::label('policies', 'Policies:') !!}
                 {!! Form::textarea('policies', null, ['class'=>'form-control'])!!}
+
+                {{-- {!! Form::label('policy_file', 'Upload a policy:') !!}
+                {!! Form::file('policy_file', null, ['class'=>'form-control'])!!} --}}
                 <br>
                 <center>
                     {!! Form::submit('Save' , ['class'=>'btn btn-primary col-sm-3 ']) !!}
@@ -38,8 +41,7 @@
 
         {!! Form::close() !!}
 
-        <div class="row">
-
+       
 
         </div>
 

@@ -21,6 +21,7 @@
         @endif
           <p>Please upload a photo to the Photo Gallery</p>
           <br>
+          @include('includes.errors')
           <div class="row">
               <div class="col-sm-3"></div>
               <div class="col-sm-6">

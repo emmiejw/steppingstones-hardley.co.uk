@@ -47,10 +47,10 @@ class PhotosController extends Controller
         ]);
         $photo = $request->photo;
         $photo_new_name = time().$photo->getClientOriginalName();
-        $photo->move('public/public/images', $photo_new_name);
+        $photo->move('photos/', $photo_new_name);
 
         $photo = PhotoGallery::create([
-            'photo' => 'public/public/images/' . $photo_new_name,
+            'photo' => 'photos/' . $photo_new_name,
             'caption' => $request->caption,
         ]);
 

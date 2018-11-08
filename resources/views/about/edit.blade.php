@@ -21,7 +21,7 @@
                 </div>
             @endif
         
-
+@include('includes.errors')
                 {!! Form::model($abouts,['method'=>'PATCH', 'action'=> ['AboutController@update', $abouts->id]]) !!}
             <div class="form-group font-weight-bold">
                 {!! Form::label('intro', 'Introduction:') !!}
@@ -41,6 +41,7 @@
 
                 {!! Form::label('policies', 'Policies:') !!}
                 {!! Form::textarea('policies', null, ['class'=>'form-control textarea'])!!}
+
                 <br>
     
                 <center>
@@ -50,8 +51,12 @@
 
         </div>
 
-        {!! Form::close() !!}           
+        {!! Form::close() !!}  
+        <br>
+        <br>
+                
       </div>
+      
   </div>
 
 

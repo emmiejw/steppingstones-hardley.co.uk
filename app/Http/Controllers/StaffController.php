@@ -46,11 +46,11 @@ class StaffController extends Controller
             'role' => 'required',
             'qualifications_1' => 'required',
             'aboutMe' => 'required',
-            'photo' => 'required|image'
+            'photo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
         $photo = $request->photo;
         $photo_new_name = time().$photo->getClientOriginalName();
-        $photo->move('public/photos', $photo_new_name);
+        $photo->move('profile/', $photo_new_name);
 
         $staff = Staff::create([
             'name' => $request->name,
@@ -59,7 +59,7 @@ class StaffController extends Controller
             'qualifications_2' => $request->qualifications_2,
             'qualifications_3' => $request->qualifications_3,
             'aboutMe' => $request->aboutMe,
-            'photo' => 'public/photos/' . $photo_new_name,
+            'photo' => 'profile/' . $photo_new_name,
         ]);
 
         Session::flash('created', 'Staff Member has been added successfully.');
@@ -104,14 +104,18 @@ class StaffController extends Controller
             'name' => 'required',
             'role' => 'required',
             'qualifications_1' => 'required',
-            'aboutMe' => 'required',
-            // 'photo' => 'required|image'
+            'aboutMe' => 'required'
         ]);
 
         $staff = Staff::find($id);
 
-        
-            
+        if($request->hasFile('photo'))
+        {
+            $photo = $request->photo;
+            $photo_new_name = time().$photo->getClientOriginalName();
+            $photo->move('profile', $photo_new_name);
+            $staff->photo = 'profile/'.$featured_new_name;
+        }
             $staff->name = $request->get('name');
             $staff->role = $request->get('role');
             $staff->qualifications_1 = $request->get('qualifications_1');

@@ -3,21 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Testimonial;
-use App\User;
-use Session;
-use Notification;
-use Illuminate\Notifications\Notifiable;
-use Illuminate\Foundation\Auth\User as Authenticatable;
+use Policy;
 
-class TestimonialController extends Controller
+class PolicyController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth')->except('index', 'store');
-    }
-
-    
     /**
      * Display a listing of the resource.
      *
@@ -25,8 +14,7 @@ class TestimonialController extends Controller
      */
     public function index()
     {
-        $testimonials = Testimonial::where('is_active', 1)->paginate(5);
-       return view('testimonials.index', compact('testimonials', $testimonials));
+        return view('about.policies');
     }
 
     /**
@@ -35,9 +23,10 @@ class TestimonialController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    
     {
-        return view('testimonials');
+        $policies_files = Policy::all();
+
+        return view('about.policies', compact('policies', $policies));
     }
 
     /**
@@ -48,12 +37,24 @@ class TestimonialController extends Controller
      */
     public function store(Request $request)
     {
-        $user = User::all();
-        Testimonial::create($request->all());
-        Notification::send($user, new \App\Notifications\NewTestimonialPosted);
-        Session::flash('created', 'Post created succesfully.');
-        return redirect()->back();
+        $this->validate($request, [
 
+            'policy_file' => 'required',
+            'policy_file.*' => 'mimes:doc,pdf,docx,zip'
+
+            ]);
+
+            $policy_file = $request->policy_file;
+            $policy_file_new_name = time().$policy_file->getClientOriginalName();
+            $policy_file->move('policies/', $policy_file_new_name);
+    
+            $policy_file = Policy::create([
+                'policy_file' => 'policies/' . $policy_file_new_name,
+            ]);
+            $policy_file->save();
+
+            return redirect()->back();
+   
     }
 
     /**
@@ -75,9 +76,7 @@ class TestimonialController extends Controller
      */
     public function edit($id)
     {
-        $testimonials = Testimonial::all();
-        return view('testimonials.edit', compact('testimonials', $testimonials));
-       
+        //
     }
 
     /**
@@ -89,8 +88,7 @@ class TestimonialController extends Controller
      */
     public function update(Request $request, $id)
     {
-        Testimonial::findOrFail($id)->update($request->all());
-        return redirect('/testimonials');
+        //
     }
 
     /**
@@ -101,9 +99,6 @@ class TestimonialController extends Controller
      */
     public function destroy($id)
     {
-        $testimonial = Testimonial::findOrFail($id);
-        $testimonial->delete();
-        Session::flash('deleted');
-        return redirect()->back();//
+        //
     }
 }

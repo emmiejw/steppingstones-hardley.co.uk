@@ -14,6 +14,12 @@ class About extends Model
         'funding',
         'registration',
         'involvement',
-        'policies'
+        'policies',
+        'policy_file'
     ];
+
+    public function policy(){
+        return $this->hasMany(Policy::class);
+    }
+
 }

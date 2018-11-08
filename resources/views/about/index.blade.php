@@ -62,9 +62,23 @@
                 <p>{{$about->registration}}</p>
                 <h3>THE PRE-SCHOOL AND PARENTAL INVOLVEMENT</h3>
                 <p>{{$about->involvement}}</p>
+                <H3>THE MANAGEMENT OF OUR SETTING</H3>
+                <p>Stepping Stones Pre-school is overseen by a parent management committee - whose members are elected by the parents of the children who attend the setting. The elections take place at our Annual General Meeting. The committee is responsible for overseeing: <br>
+                        The management of the setting’s finances; <br>
+                        The employment and management of staff;<br>
+                        That the setting has, and works to, policies that help it to provide a high quality service; <br>
+                        That the setting works in partnership with the children and the children's parents/carer’s. <br>
+                        The Annual General Meeting is open to the parents/carers of all of the children who attend the setting. It is our shared forum for looking back over the previous year’s activities and shaping the coming year’s plan. The committee consists of a maximum of nine elected members and three co-opted members, including three officers — Chairperson, Secretary and Treasurer. Our pre-school cannot run without elected officers and members, therefore, if you would like to have your say in how the pre-school is mm and are interested in becoming a committee member, please speak to a member of staff and they will put you in touch with the current chairperson. <br>
+                        We at Stepping Stones truly believe and endorse that play is vital for the healthy all round development of under 5’s and want your child to enjoy their time spent with us.</p>
                 <h3>POLICIES</h3>
-                <p>{{$about->policies}}</p>
+                <p>{{$about->policies}}</p>                               
               @endforeach
+              <ul>
+              <li><a href="{{ asset('policies/Ticks.pdf')}}">Download Ticks PDF</a></li>
+              <li><a href="{{ asset('policies/ECSSFlyerDummyAdvice28-08-2013.doc')}}">Download Dummy Advice</a></li>
+              <li><a href="{{ asset('policies/PHE_Preschool_A5.pdf')}}">Download Pre-School Immunisations PDF</a></li>
+
+              </ul>
       </div>
       <center>    
           <button class="btn btn-warning">

@@ -24,6 +24,7 @@ class CreateAboutsTable extends Migration
             $table->mediumText('registration')->nullable();
             $table->mediumText('involvement')->nullable();
             $table->mediumText('policies')->nullable();
+            $table->mediumText('policy_file')->nullable();
             $table->timestamps();
         });
     }

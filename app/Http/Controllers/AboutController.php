@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\About;
+use App\Policy;
 use Session;
 
 class AboutController extends Controller
@@ -20,7 +21,9 @@ class AboutController extends Controller
     public function index()
     {
         $abouts = About::all();
-        return view('about.index', compact('abouts', $abouts));
+        $policies = Policy::all();
+
+        return view('about.index', compact(['abouts','policies', $abouts, $policies]));
     }
 
     /**
@@ -41,16 +44,23 @@ class AboutController extends Controller
      */
     public function store(Request $request)
     {
-        $about = new About;
-        $about->intro = $request->intro;
-        $about->aims = $request->aims;
-        $about->fees = $request->fees;
-        $about->rates = $request->rates;
-        $about->funding = $request->funding;
-        $about->registration = $request->registration;
-        $about->involvement = $request->involvement;
-        $about->policies = $request->policies;
-        $about->save();
+        $policy_file = $request->policy_file;
+        $policy_file_new_name = time().$policy_file->getClientOriginalName();
+        $policy_file->move('policies/', $policy_file_new_name);
+
+        $abouts = About::create([
+            'intro' => $request->intro,
+            'aims' => $request->aims,
+            'fees' => $request->fees,
+            'rates' => $request->rates,
+            'funding' => $request->funding,
+            'registration' => $request->registration,
+            'involvement' => $request->involvement,
+            'policies' => $request->policies,
+        ]);
+
+        $policies = Policy::create(['policy_file' => $request->policy_file,]);
+
 
         Session::flash('created', '"About Page" information has been added successfully.');
         return redirect()->back();
@@ -97,6 +107,7 @@ class AboutController extends Controller
         $about->registration = $request->get('registration');
         $about->involvement = $request->get('involvement');
         $about->policies = $request->get('policies');
+        $about->policy_file = $request->get('policy_file');
         $about->save();
         
         Session::flash('updated', '"About Page" information has been updated successfully.');

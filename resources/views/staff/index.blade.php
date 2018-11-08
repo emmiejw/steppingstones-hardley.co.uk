@@ -28,7 +28,7 @@
                                 <br>
                                 {{$staff->qualifications_3}}
                               <p><b>What I love about Stepping Stones</b>: {{$staff->aboutMe}}</p>
-                               
+                              <a href="{{route('staff.edit', $staff->id)}}"><i class="far fa-star" style="float:right;"></i></a>
                             </div>
                           </div>      
                       </div>

@@ -21,11 +21,7 @@ Route::get('/home', 'HomeController@index')->name('home');
     Route::resource('/photogallery', 'PhotosController');
     Route::resource('/contact', 'ContactController');
     Route::resource('/staff', 'StaffController');
-
-
-
-
-
+    
 Auth::routes();
     
 Route::get('/home', 'HomeController@index')->name('home');
