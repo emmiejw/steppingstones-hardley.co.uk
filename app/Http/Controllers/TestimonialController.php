@@ -14,7 +14,7 @@ class TestimonialController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth')->except('index', 'store','update');
+        $this->middleware('auth')->only('edit', 'destroy');
     }
 
     
