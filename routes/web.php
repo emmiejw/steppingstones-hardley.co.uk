@@ -16,9 +16,7 @@ Route::get('/tapestry', function () {
 Route::get('/contact', function () {
     return view('contact');
 });
-// Route::get('/thankyou', function () {
-//     return view('testimonials.thankyou');
-// });
+
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/thankyou', 'ThankyouController@thankyou')->name('thankyou');

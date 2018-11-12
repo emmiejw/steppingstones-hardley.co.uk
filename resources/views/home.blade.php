@@ -41,13 +41,7 @@
                                                           <td class="td"><a href="/photogallery">Photo Gallery</a></td>
                                                           <td class="td"><a href="{{url('/photogallery/1/edit')}}" class="btn btn-danger"><i class="fa fa-edit"></i></a></td>
                                                           {{-- <td><a href="/photos/create" class="btn btn-warning">Add</a></td> --}}
-                                                        </tr>  
-                                                        <tr>
-                                                          <td class="td"><a href="/contact">Contact Us</a></td>
-                                                          <td class="td"><a href="{{url('/contact/1/edit')}}" class="btn btn-danger"><i class="fa fa-edit"></i></a></td>
-                                                          
-                                                          {{-- <td><a href="/contact/create" class="btn btn-warning">Add</a></td> --}}
-                                                        </tr> 
+                                                        </tr>   
                                                     </tbody>
                                                 </table>
                                             

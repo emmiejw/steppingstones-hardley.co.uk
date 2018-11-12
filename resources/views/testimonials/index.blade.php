@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+@include('includes.errors')
 <div class="container">
         <div class="panel-group">
           <div class="panel panel-danger">
