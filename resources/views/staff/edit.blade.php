@@ -26,7 +26,7 @@
 
         @include('includes.errors')
             
-            {!! Form::model($staffs,['method'=>'PATCH', 'action'=> ['StaffController@update', $staffs->id]]) !!}
+            {!! Form::model($staff,['method'=>'PATCH', 'action'=> ['StaffController@update', $staff->id]]) !!}
             <div class="form-group font-weight-bold">
                 {!! Form::label('name', 'Name:') !!}
               {!! Form::text('name', null, ['class'=>'form-control'])!!}
@@ -57,7 +57,7 @@
                         {!! Form::close() !!}
                       </div>
                 <div class="col-sm-1"></div>
-                    {!! Form::open(['method'=>'DELETE', 'action'=> ['StaffController@destroy', $staffs->id]]) !!}
+                    {!! Form::open(['method'=>'DELETE', 'action'=> ['StaffController@destroy', $staff->id]]) !!}
           
                       <div class="form-group" style="margin-right:20px;">
                           {!! Form::submit('Delete Staff', ['class'=>'btn btn-danger col-sm-3']) !!}
