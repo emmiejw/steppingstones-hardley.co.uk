@@ -23,10 +23,12 @@
                   {!! Form::label('message', 'Your message:') !!}
                   {!! Form::textarea('message', null, ['class'=>'form-control'])!!}
               </div>
+              <p>Your Post will be sent for Approval before displaying on this page</p>
               <div class="form-group">
                   {!! Form::submit('Submit', ['class'=>'btn btn-primary']) !!}
               </div>
          {!! Form::close() !!}
+         
             </div>
 
             <div class="col-sm-8">
