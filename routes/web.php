@@ -4,7 +4,7 @@ use App\Testimonials;
 
 
 Route::get('/', function () {
-    return view('steppingstones');
+    return view('steppingstones')->name('steppingstones');
 });
 
 Route::get('/routine', function () {

@@ -14,7 +14,7 @@ class TestimonialController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth')->except('index', 'store');
+        $this->middleware('auth')->except('index', 'store','update');
     }
 
     
@@ -52,7 +52,7 @@ class TestimonialController extends Controller
         Testimonial::create($request->all());
         Notification::send($user, new \App\Notifications\NewTestimonialPosted);
         Session::flash('created', 'Post created succesfully.');
-        return redirect()->route('testimonials.index');
+        return redirect()->back();
 
     }
 
