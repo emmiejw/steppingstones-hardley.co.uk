@@ -137,7 +137,7 @@ class StaffController extends Controller
      */
     public function destroy($id)
     {
-        $staff = Staff::findOrFail($id);
+        $staffs = Staff::findOrFail($id);
         $staff->delete();
         Session::flash('deleted', 'Staff Member has been deleted successfully.');
         return redirect()->back();

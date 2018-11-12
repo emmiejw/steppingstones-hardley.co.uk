@@ -57,7 +57,7 @@
                         {!! Form::close() !!}
                       </div>
                 <div class="col-sm-1"></div>
-                    {!! Form::open(['method'=>'DELETE', 'action'=> ['StaffController@destroy', $staff->id]]) !!}
+                    {!! Form::open(['method'=>'DELETE', 'action'=> ['StaffController@destroy', $staffs->id]]) !!}
           
                       <div class="form-group" style="margin-right:20px;">
                           {!! Form::submit('Delete Staff', ['class'=>'btn btn-danger col-sm-3']) !!}
