@@ -52,7 +52,7 @@ class TestimonialController extends Controller
         Testimonial::create($request->all());
         Notification::send($user, new \App\Notifications\NewTestimonialPosted);
         Session::flash('created', 'Post created succesfully.');
-        return redirect()->route('thankyou');
+        return redirect()->route('/thankyou');
 
     }
 
