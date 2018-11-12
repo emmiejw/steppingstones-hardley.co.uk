@@ -140,6 +140,6 @@ class StaffController extends Controller
         $staffs = Staff::findOrFail($id);
         $staffs->delete();
         Session::flash('deleted', 'Staff Member has been deleted successfully.');
-        return redirect()->back();
+        return redirect()->route('staff.index');
     }
 }
