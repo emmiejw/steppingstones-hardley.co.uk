@@ -23,7 +23,15 @@
         }
         .linav{
             color: black;
+            text-shadow: 2px 2px white;
             font-weight: bolder;
+        }
+
+        
+
+        body {
+            background-image: url('/images/dreamstime_s_63208305.jpg');
+            
         }
     }
 
@@ -42,7 +50,7 @@
     }
 
     .jumbotron2{
-        background-image: url('https://st2.depositphotos.com/1472273/8141/v/950/depositphotos_81418800-stock-illustration-rainbow-chalk-brush-strokes-background.jpg');
+        background-image: url('/images/dreamstime_s_63208305.jpg');
         max-height: 200px;
         width: 100%;
         font-family: 'Pompiere', cursive;
@@ -54,7 +62,7 @@
     }
 
     .card-header, .session {
-        font-size: 25px;
+        font-size: 20px;
         font-weight: bold;
         font-family: 'Pompiere', cursive;
 

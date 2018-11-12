@@ -24,7 +24,7 @@
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
-                <li class="linav"><a href="/about">About Our Pre-School</a></li>
+                <li class="linav"><a href="/about"><b class="link">About Our Pre-School</b></a></li>
                 <li class="linav"><a href="/staff">Our Staff</a></li>
                 <li class="linav"><a href="/routine">Our Routine</a></li>
                 <li class="linav"><a href="/tapestry">Tapestry</a></li>

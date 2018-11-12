@@ -25,7 +25,7 @@ class TestimonialController extends Controller
      */
     public function index()
     {
-        $testimonials = Testimonial::where('is_active', 1)->paginate(5);
+        $testimonials = Testimonial::where('is_active', 1)->orderBy('id', 'DESC')->paginate(5);
        return view('testimonials.index', compact('testimonials', $testimonials));
     }
 
@@ -75,7 +75,7 @@ class TestimonialController extends Controller
      */
     public function edit($id)
     {
-        $testimonials = Testimonial::all();
+        $testimonials = Testimonial::orderBy('id', 'DESC')->paginate(5);
         return view('testimonials.edit', compact('testimonials', $testimonials));
        
     }
@@ -90,7 +90,8 @@ class TestimonialController extends Controller
     public function update(Request $request, $id)
     {
         Testimonial::findOrFail($id)->update($request->all());
-        return redirect('/testimonials');
+        Session::flash('updated', 'Testimonial succesfully Approved.');
+        return redirect()->back();
     }
 
     /**
@@ -104,6 +105,6 @@ class TestimonialController extends Controller
         $testimonial = Testimonial::findOrFail($id);
         $testimonial->delete();
         Session::flash('deleted');
-        return redirect()->back();//
+        return redirect()->back();
     }
 }

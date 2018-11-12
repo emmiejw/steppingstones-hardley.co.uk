@@ -13,9 +13,9 @@
                                             <table class="table-borderless col-8">
                                                     <thead>
                                                         <tr>
-                                                            <th class="th">Page</th>
+                                                            {{-- <th class="th">Page</th>
                                                             <th class="th">Edit Page</th>
-                                                            <th class="th">Add a Staff Member</th>
+                                                            <th class="th">Add a Staff Member</th> --}}
 
                                                         </tr>
                                                     </thead>
@@ -27,8 +27,8 @@
                                                         </tr>   
                                                         <tr>
                                                           <td class="td"><a href="/staff">Our Staff</a></td>
-                                                          <td class="td"><a href="{{url('/staff/1/edit')}}" class="btn btn-danger"><i class="fa fa-edit"></i></a></td>
-                                                          <td class="td"><a href="{{url('/staff/create')}}" class="btn btn-warning"><i class="fa fa-edit"></i></a></td>
+                                                          {{-- <td class="td"><a href="{{url('/staff/1/edit')}}" class="btn btn-danger"><i class="fa fa-edit"></i> Edit Page</a></td> --}}
+                                                          <td class="td"><a href="{{url('/staff/create')}}" class="btn btn-warning"><i class="fas fa-user-plus"></i></a></td>
                                                           
                                                         </tr> 
                 
@@ -38,7 +38,7 @@
                                                           {{-- <td><a href="/testimonials/create" class="btn btn-warning">Add</a></td> --}}
                                                         </tr>
                                                         <tr>
-                                                          <td class="td"><a href="/photos">Photo Gallery</a></td>
+                                                          <td class="td"><a href="/photogallery">Photo Gallery</a></td>
                                                           <td class="td"><a href="{{url('/photogallery/1/edit')}}" class="btn btn-danger"><i class="fa fa-edit"></i></a></td>
                                                           {{-- <td><a href="/photos/create" class="btn btn-warning">Add</a></td> --}}
                                                         </tr>  

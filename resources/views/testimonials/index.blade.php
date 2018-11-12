@@ -7,7 +7,7 @@
             <div class="panel-heading">Testimonials </div>
             <div class="panel-body">
                     @if(Session::has('created'))
-                    <div class="alert alert-success alert-dismissible">
+                    <div class="alert alert-success alert-dismissible session">
                         <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                         <strong>Success!</strong> Thank you for you Testimonial, the Staff have been notifed
                     </div>
@@ -40,7 +40,7 @@
                   
                       <div class="col-5">
                           <center>
-                              <p class="testimonial"> {{$testimonial->message}} </p>
+                              <p class="testimonial"><b>"</b>{{$testimonial->message}} <b>"</b> </p>
                               <p><b>{{$testimonial->name}}</b>  - posted {{$testimonial->created_at->diffForHumans()}}</p>
                           </center>
                       </div>

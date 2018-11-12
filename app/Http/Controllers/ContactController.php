@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Contact;
+use Session;
 
 class ContactController extends Controller
 {
@@ -84,7 +85,18 @@ class ContactController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $contact = Contact::find($id);
+        $contact->address_1 = $request->get('address_1');
+        $contact->address_2 = $request->get('address_2');
+        $contact->City = $request->get('City');
+        $contact->postcode = $request->get('postcode');
+        $contact->phone = $request->get('phone');
+        $contact->email = $request->get('email');
+        $contact->save();
+        
+        Session::flash('updated', '"Contact Page" information has been updated successfully.');
+
+        return redirect()->back();
     }
 
     /**

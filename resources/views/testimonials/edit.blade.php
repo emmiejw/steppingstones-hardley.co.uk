@@ -2,12 +2,26 @@
 
 @section('content')
 <div class="container">
+        
         <div class="panel-group">
           <div class="panel panel-danger">
             <div class="panel-heading">Testimonials </div>
             <div class="panel-body">
+                    @if(Session::has('updated'))
+                    <div class="alert alert-warning alert-dismissible session">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    <strong>Success!</strong>Testimonial has been Approved successfully!
+                    </div>
+                @endif
+                @if(Session::has('deleted'))
+            <div class="alert alert-danger alert-dismissible session">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <strong>Success!</strong> Testimonial has deleted successfully!
+            </div>
+        @endif
                 <p>Please look below for the current notifications and whether the Testimnoial is Approved and visible on the page</p>
-              <table class="table">
+              <div class="table-responsive">
+                <table class="table">
                   <tr>
                     <thead>
                         <th>Parent's name</th>
@@ -29,7 +43,7 @@
                                 <input type="hidden" name="is_active" value="0">
         
                                         <div class="form-group">
-                                            {!! Form::submit('Click to un-approve', ['class'=>'btn btn-success']) !!}
+                                            {!! Form::submit('Un-approve', ['class'=>'btn btn-success']) !!}
                                         </div>
                                 {!! Form::close() !!}
                         
@@ -40,7 +54,7 @@
                                 <input type="hidden" name="is_active" value="1">
 
                                 <div class="form-group">
-                                    {!! Form::submit('Click to Approve', ['class'=>'btn btn-info']) !!}
+                                    {!! Form::submit('Approve', ['class'=>'btn btn-info']) !!}
                                 </div>
                                 {!! Form::close() !!}
         
@@ -55,9 +69,17 @@
                         </td>
                     </tr>
                 @endforeach   
-                </tbody>    
+                </tbody> 
+                <center>
+                    {{ $testimonials->links() }}
+                </center>
               </table>
             </div>
+              <center>
+                <a href="{{ URL::route('home') }}" class="btn btn-info col-sm-3" style="margin-left: 50px;">Return Home</a>
+            </center>
+            </div>
+            
             </div>
           </div>
         </div>

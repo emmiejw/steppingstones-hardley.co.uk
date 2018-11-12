@@ -7,14 +7,14 @@
         <div class="panel-heading"><b>Edit</b> Photo Gallery</div>
         <div class="panel-body">
             @if(Session::has('created'))
-            <div class="alert alert-success alert-dismissible">
+            <div class="alert alert-success alert-dismissible session">
                 <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                 <strong>Success!</strong> The photo you uploaded has been added to the Photo Gallery successfully!
             </div>
         @endif
 
         @if(Session::has('deleted'))
-            <div class="alert alert-danger alert-dismissible">
+            <div class="alert alert-danger alert-dismissible session">
                 <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                 <strong>Success!</strong> The photo you selected has been deleted successfully!
             </div>
@@ -31,10 +31,10 @@
                       {!! Form::label('photo', 'Upload a Photo:') !!}
                       {!! Form::file('photo', null, ['class'=>'form-control'])!!}
                           <br>
-                      <center>
-                          {!! Form::submit('Save' , ['class'=>'btn btn-primary col-sm-3 ']) !!}
-        
-                      </center>
+                          <center>
+                            {!! Form::submit('Upload' , ['class'=>'btn btn-primary col-sm-3']) !!}
+                            <a href="{{ URL::route('home') }}" class="btn btn-info col-sm-3" style="margin-left: 50px;">Return Home</a>
+                        </center>
               </div>
               {!! Form::close() !!}
               </div>
