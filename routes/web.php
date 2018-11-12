@@ -25,7 +25,6 @@ Route::get('/home', 'HomeController@index')->name('home');
     Route::resource('/about', 'AboutController');
     Route::resource('/testimonials','TestimonialController');
     Route::resource('/photogallery', 'PhotosController');
-    Route::resource('/contact', 'ContactController');
     Route::resource('/staff', 'StaffController');
     
 Auth::routes();
