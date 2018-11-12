@@ -48,11 +48,11 @@ class TestimonialController extends Controller
      */
     public function store(Request $request)
     {
-        $testimonials = Testimonial::all();
+        $user = User::all();
         Testimonial::create($request->all());
         Notification::send($user, new \App\Notifications\NewTestimonialPosted);
         Session::flash('created', 'Post created succesfully.');
-        return redirect()->back();
+        return redirect()->route('thankyou');
 
     }
 
