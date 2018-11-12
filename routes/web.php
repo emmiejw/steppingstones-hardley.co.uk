@@ -13,6 +13,12 @@ Route::get('/routine', function () {
 Route::get('/tapestry', function () {
     return view('tapestry');
 });
+Route::get('/contact', function () {
+    return view('contact');
+});
+Route::get('/thankyou', function () {
+    return view('testimonials.thankyou');
+});
 
 Route::get('/home', 'HomeController@index')->name('home');
 
