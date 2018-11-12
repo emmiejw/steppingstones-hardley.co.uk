@@ -4,6 +4,7 @@
 <div class="container">
     <div class="panel-group">
       <div class="panel panel-info">
+          @include('includes.errors')
         <div class="panel-heading">Add a staff member</div>
         <div class="panel-body">
           <p>Add a Staff Member</p>

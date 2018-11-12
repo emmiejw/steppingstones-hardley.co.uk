@@ -10,9 +10,9 @@
             <br>
             <p>The regular staff members in the group are:</p>
             <br>
-            @foreach ($staffs as $staff)
             <div class="panel panel-primary">
                 <div class="panel-body">
+                    @foreach ($staffs as $staff)
                     <div class="col-sm-5">
                       <center>
                         <img height="200" width="250" src="{{$staff->photo}}" alt="" class="staff_photo">
