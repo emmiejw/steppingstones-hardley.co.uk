@@ -34,6 +34,9 @@
                       </div>
               @endforeach
       </div>
+      <center>
+        {{ $staffs->links() }}
+    </center>
       <center>    
         <button class="btn btn-warning">
                 <li><a href="/staff">Back to the Top of the Page</a></li>
@@ -41,6 +44,7 @@
     </center>
     <br>
   </div>
+ 
 
 
 @endsection
