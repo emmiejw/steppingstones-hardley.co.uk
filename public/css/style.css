@@ -51,6 +51,8 @@
 
     .jumbotron2{
         background-image: url('/images/dreamstime_s_63208305.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
         max-height: 200px;
         width: 100%;
         font-family: 'Pompiere', cursive;
