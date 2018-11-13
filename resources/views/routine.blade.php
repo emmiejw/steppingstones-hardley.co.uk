@@ -131,12 +131,14 @@
                </p>
                <h2>If you would prefer this information in paper copy please ask the staff for the prospectus.  </h2>
         </div>
+        <center>    
+            <button class="btn btn-warning">
+                    <li><a href="/routine">Back to the Top of the Page</a></li>
+            </button>
+        </center>
+        <br>
       </div>
-      <center>    
-        <button class="btn btn-warning">
-                <li><a href="/staff">Back to the Top of the Page</a></li>
-        </button>
-    </center> 
+       
     </div>
 
 
