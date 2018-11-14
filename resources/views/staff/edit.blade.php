@@ -28,7 +28,10 @@
             
             {!! Form::model($staffs,['method'=>'PATCH', 'action'=> ['StaffController@update', $staffs->id]]) !!}
             <div class="form-group font-weight-bold">
-                {!! Form::label('name', 'Name:') !!}
+              {!! Form::label('id', 'ID:') !!}
+              {!! Form::text('id', null, ['class'=>'form-control'])!!} 
+
+              {!! Form::label('name', 'Name:') !!}
               {!! Form::text('name', null, ['class'=>'form-control'])!!}
 
               {!! Form::label('role', 'Role:') !!}
