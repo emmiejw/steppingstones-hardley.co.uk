@@ -23,5 +23,5 @@
           </center> 
         </div>
 
-
+@include('includes.copyright')
 @endsection

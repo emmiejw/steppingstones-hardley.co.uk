@@ -35,5 +35,7 @@
     </div>
   </div>
 </div>
-    
+  
+@include('includes.copyright')
+
 @endsection

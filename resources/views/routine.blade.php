@@ -141,6 +141,6 @@
        
     </div>
 
-
+@include('includes.copyright')
 
 @endsection

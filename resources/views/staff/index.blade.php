@@ -45,6 +45,6 @@
     <br>
   </div>
  
-
+@include('includes.copyright')
 
 @endsection
