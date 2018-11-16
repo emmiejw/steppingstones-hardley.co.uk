@@ -44,8 +44,8 @@ class NewTestimonialPosted extends Notification
     {
         return (new MailMessage)
                     ->line('New Testimonial has been recieved')
-                    ->action('Testimonial Action', url('/testimonials/1/edit'))
-                    ->line('Follow the link to Manage the Testimonials');
+                    ->action('Log in', url('/login'))
+                    ->line('Follow the link and head to the Edit Testimonials page to view the new Testimonial');
     }
 
     /**
