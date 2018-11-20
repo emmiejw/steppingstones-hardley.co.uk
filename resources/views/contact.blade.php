@@ -18,7 +18,7 @@
                               SO45 2QG <br>
                               <br>
                             <b>Call us on</b>:
-                             <a href="tel:+02380 897025">02380 897025</a>  <br>
+                             <a href="tel:02380 897025">02380 897025</a>  <br>
                               <br>
                             <b>Email us</b>: 
                              <a href="mailto:steppingstones.hardley@gmail.com">steppingstones.hardley@gmail.com</a>  <br>
