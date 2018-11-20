@@ -1,10 +1,11 @@
 <?php
-
+use App\Mainpage;
 use App\Testimonials;
 
 
 Route::get('/', function () {
-    return view('steppingstones');
+    $mainpages = Mainpage::all();
+    return view('mainpage.index')->with('mainpages', $mainpages);
 });
 
 Route::get('/routine', function () {
@@ -25,6 +26,8 @@ Route::get('/thankyou', 'ThankyouController@thankyou')->name('thankyou');
     Route::resource('/testimonials','TestimonialController');
     Route::resource('/photogallery', 'PhotosController');
     Route::resource('/staff', 'StaffController');
+    Route::resource('/main', 'SteppingstonesController');
+    
     
 Auth::routes();
     

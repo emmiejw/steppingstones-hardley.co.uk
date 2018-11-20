@@ -11,51 +11,35 @@
                                     <div class="col-10">
                                         <center>
                                             <table class="table-borderless col-8">
-                                                    <thead>
-                                                        <tr>
-                                                            {{-- <th class="th">Page</th>
-                                                            <th class="th">Edit Page</th>
-                                                            <th class="th">Add a Staff Member</th> --}}
-
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                          <td class="td"><a href="/about">About Our Preschool</a></td>
-                                                          <td class="td"><a href="{{url('/about/1/edit')}}" class="btn btn-danger"><i class="fa fa-edit"></i></a></td>
-                                                          
-                                                        </tr>   
-                                                        <tr>
-                                                          <td class="td"><a href="/staff">Our Staff</a></td>
-                                                          {{-- <td class="td"><a href="{{url('/staff/1/edit')}}" class="btn btn-danger"><i class="fa fa-edit"></i> Edit Page</a></td> --}}
-                                                          <td class="td"><a href="{{url('/staff/create')}}" class="btn btn-warning"><i class="fas fa-user-plus"></i></a></td>
-                                                          
-                                                        </tr> 
-                
-                                                        <tr>
-                                                          <td class="td"><a href="/testimonials">Testmonials</a></td>
-                                                          <td class="td"><a href="{{url('testimonials/1/edit')}}" class="btn btn-danger"><i class="fa fa-edit"></i></a></td>                                                          
-                                                          {{-- <td><a href="/testimonials/create" class="btn btn-warning">Add</a></td> --}}
-                                                        </tr>
-                                                        <tr>
-                                                          <td class="td"><a href="/photogallery">Photo Gallery</a></td>
-                                                          <td class="td"><a href="{{url('/photogallery/1/edit')}}" class="btn btn-danger"><i class="fa fa-edit"></i></a></td>
-                                                          {{-- <td><a href="/photos/create" class="btn btn-warning">Add</a></td> --}}
-                                                        </tr>   
-                                                    </tbody>
-                                                </table>
-                                            
-                                                <br>
-                                                <a class="btn btn-primary btn-lg" href="{{ route('logout') }}"
-                                                    onclick="event.preventDefault();
-                                                    document.getElementById('logout-form').submit();">{{ __('Logout') }}
-                                                </a>
-                                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                                    @csrf
-                                                </form>
-                                            </div>
-                                        </center>
-                            
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="td"><a href="/about">About Our Preschool</a></td>
+                                                        <td class="td"><a href="{{url('/about/1/edit')}}" class="btn btn-danger"><i class="fa fa-edit"></i></a></td>
+                                                    </tr>   
+                                                    <tr>
+                                                        <td class="td"><a href="/staff">Our Staff</a></td>
+                                                        <td class="td"><a href="{{url('/staff/create')}}" class="btn btn-warning"><i class="fas fa-user-plus"></i></a></td>
+                                                    </tr> 
+                                                    <tr>
+                                                        <td class="td"><a href="/testimonials">Testmonials</a></td>
+                                                        <td class="td"><a href="{{url('testimonials/1/edit')}}" class="btn btn-danger"><i class="fa fa-edit"></i></a></td>                                                          
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="td"><a href="/photogallery">Photo Gallery</a></td>
+                                                        <td class="td"><a href="{{url('/photogallery/1/edit')}}" class="btn btn-danger"><i class="fa fa-edit"></i></a></td>
+                                                    </tr>   
+                                                </tbody>
+                                            </table>
+                                        <br>
+                                    <a class="btn btn-primary btn-lg" href="{{ route('logout') }}"
+                                        onclick="event.preventDefault();
+                                        document.getElementById('logout-form').submit();">{{ __('Logout') }}
+                                    </a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    @csrf
+                                </form>
+                            </div>
+                        </center>     
                 </div>
             </div>
         </div>

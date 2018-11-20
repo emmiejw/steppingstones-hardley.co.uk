@@ -15,8 +15,8 @@ return [
     */
 
     'mailgun' => [
-        'domain' =>('mg.steppingstones-hardley.co.uk'),
-        'secret' =>('f64bc6931b8c140943ddbcdc12015c0f-9525e19d-b21227f2'),
+        'domain' => env('MAILGUN_DOMAIN'),
+        'secret' => env('MAILGUN_SECRET'),
     ],
 
     'ses' => [
