@@ -16,11 +16,8 @@ class Mainpage extends Migration
         Schema::create('mainpages', function (Blueprint $table) {
         $table->increments('id');
         $table->string('photo_1');
-        $table->string('caption_1');
-        $table->string('photo_2');
-        $table->string('caption_2');
-        $table->string('photo_3');
-        $table->string('caption_3');
+        $table->timestamps('created_at');
+        $table->timestamps('updated_at');
         });
     }
 
