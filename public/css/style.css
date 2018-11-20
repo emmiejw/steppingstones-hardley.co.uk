@@ -33,6 +33,11 @@
             background-image: url('/images/dreamstime_s_63208305.jpg');
             
         }
+
+        .googlemap{
+            height: 90%;
+            width: 90%;
+        }
     }
 
     .linav{
@@ -133,6 +138,7 @@
         border:5px solid purple;
         border-style: double;
     }
+
 
     #photos {
 
