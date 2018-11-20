@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="google-site-verification" content="sXBVn6940c0yAAKC24xCh1NYGPKyJFq3Kh2-qYeQRIA" />
     <title>Stepping Stones Pre-School</title>
     <link href="https://fonts.googleapis.com/css?family=Charmonman|Dokdo|Fahkwang|Nanum+Brush+Script|Pompiere" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
