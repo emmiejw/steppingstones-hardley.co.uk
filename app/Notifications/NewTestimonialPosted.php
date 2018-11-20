@@ -43,8 +43,8 @@ class NewTestimonialPosted extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->line('TEST EMAIL')
-                    ->action('Log in', url('/login'))
+                    ->line('A new Testimonial has been submitted to your website.')
+                    ->action('Log in ', url('/login'))
                     ->line('Follow the link and head to the Edit Testimonials page to view the new Testimonial');
     }
 
