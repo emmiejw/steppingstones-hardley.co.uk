@@ -13,6 +13,10 @@
                                             <table class="table-borderless col-8">
                                                 <tbody>
                                                     <tr>
+                                                        <td class="td"><a href="/">Main page - photos & captions</a></td>
+                                                        <td class="td"><a href="{{url('/main/create')}}" class="btn btn-warning"><i class="far fa-image"></i></a></td>                                                        
+                                                    </tr>
+                                                    <tr>
                                                         <td class="td"><a href="/about">About Our Preschool</a></td>
                                                         <td class="td"><a href="{{url('/about/1/edit')}}" class="btn btn-danger"><i class="fa fa-edit"></i></a></td>
                                                     </tr>   
