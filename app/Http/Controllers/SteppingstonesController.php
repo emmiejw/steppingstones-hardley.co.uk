@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Mainpage;
+use Session;
 use Illuminate\Http\Request;
 
 class SteppingstonesController extends Controller
@@ -76,7 +77,13 @@ class SteppingstonesController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $mainpage = Mainpage::find($id);
+        $mainpage->caption_1 = $request->get('caption_1');
+        $mainpage->save();
+        
+        Session::flash('updated', '"Photo Caption" has been updated successfully.');
 
+        return redirect()->back();
     }
 
     /**
